@@ -59,8 +59,7 @@ $('.btn-claim').click(e => {
   if ($(target).hasClass('is-disabled')) return;
   if (claim_amount <= 0) return;
   $(target).addClass('is-disabled');
-  let proof = []; // TODO
-  contract.getFunction('claim').send(proof, ref_addr)
+  contract.getFunction('claim').send(MERKLE_PROOF, ref_addr)
     .then(_ => {
       alert('Claim Success! Check your txn.')
     })
