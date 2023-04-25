@@ -65,6 +65,7 @@ $('.btn-claim').click(e => {
     })
     .catch(e => {
       alert(e);
+      console.log(e);
       $(target).removeClass('is-disabled');
     })
 });
